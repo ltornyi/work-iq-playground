@@ -47,3 +47,11 @@ az ad app permission grant --id "$SP_ID" --api "$WORKIQ_APP_ID" --scope "WorkIQA
 ```
 
 Check the setup in the Azure portal. Navigate to **Entra ID** > **App registrations** > *your app registration* > **Manage** >  **API permissions**. You should see the `WorkIQAgent.Ask` permission listed and admin consent granted.
+
+## Add redirect URI to the app registration
+
+We will run the app locally using Vite, which will serve the app on `http://localhost:5173`. We need to add this URL as a redirect URI to the app registration for the single-page application platform. The Azure CLI does not support it at this point - add the redirect URI in the Azure portal. Navigate to **Entra ID** > **App registrations** > *your app registration* > **Manage** >  **Authentication** > **Redirect URI configuration** . Add `http://localhost:5173/` as a redirect URI.
+
+## Configure the SPA client
+
+See details in the [README.md](workiq-client/README.md) file in the `workiq-client` directory.
