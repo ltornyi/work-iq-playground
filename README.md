@@ -9,6 +9,10 @@ export WORKIQ_APP_ID="fdcc1f02-fc51-4226-8753-f668596af7f7"
 az ad sp create --id "$WORKIQ_APP_ID"
 ```
 
+## Set up Work IQ spending policy
+
+Go to Microsoft 365 admin center and under Copilot > Cost management, create a spending policy. Follow the [spending-policy setup guide](https://learn.microsoft.com/en-us/copilot/implement/usage-based-billing-manage-copilot-credits) to enable usage-based billing, then configure who can use each service.
+
 ## Create a new app registration
 
 Edit the `DISPLAY_NAME` value below to a name of your choice, then run the command to create a new app registration in your tenant. The command will return the `appId` of the newly created app registration, which you will need later.

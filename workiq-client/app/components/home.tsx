@@ -1,4 +1,5 @@
 import type { AccountInfo } from "@azure/msal-browser";
+import { WorkIqChatPanel } from "./workiq-chat";
 
 export function HomeShell({ children }: { children: React.ReactNode }) {
   return (
@@ -97,6 +98,7 @@ export function SignedInPanel({
         <AccountDetail label="Username" value={account.username} />
         <AccountDetail label="Tenant ID" value={account.tenantId} monospace />
       </dl>
+      <WorkIqChatPanel account={account} key={account.homeAccountId} />
       <button
         className="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/25 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-300"
         onClick={onSignOut}
